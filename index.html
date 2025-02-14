@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje para ti</title>
+    <style>
+        /* Fondo con gradiente de San Valentín */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7eb9, #ff65a3, #ff4d88);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Contenedor de mensaje con animación */
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animación de texto */
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        /* Animación de "rebote" en el texto */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Animación de desvanecimiento */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Reproductor de música */
+        .music-player {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para ti, mi amor ❤️</h1>
+        <p>El día de hoy quiero recordarte lo especial que eres para mí. Eres mi razón para sonreír, mi inspiración, mi todo. Te amo más de lo que las palabras pueden expresar, y este día solo quiero que sientas todo mi amor en cada nota de esta canción.</p>
+
+        <!-- Reproductor de música de la canción "Novatos - Humbe" -->
+        <div class="music-player">
+            <audio controls autoplay>
+                <source src="https://www.youtube.com/watch?v=muSt77GoWbU" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
+    </div>
+</body>
+</html>
