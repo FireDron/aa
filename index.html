@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje para ti</title>
+    <title>My Princess</title>
     <style>
         /* Fondo con gradiente de San Valentín */
         body {
@@ -17,6 +17,7 @@
             align-items: center;
             color: white;
             overflow: hidden;
+            position: relative;
         }
 
         /* Contenedor de mensaje con animación */
@@ -30,7 +31,8 @@
             font-size: 3em;
             font-weight: bold;
             margin-bottom: 20px;
-            animation: bounce 1.5s infinite;
+            animation: bounce 1.5s infinite, fall 4s ease-in-out;
+            position: relative;
         }
 
         p {
@@ -52,6 +54,18 @@
             }
         }
 
+        /* Animación de caída de letras */
+        @keyframes fall {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Animación de desvanecimiento */
         @keyframes fadeIn {
             0% {
@@ -64,10 +78,43 @@
             }
         }
 
-        /* Reproductor de música */
-        .music-player {
-            margin-top: 30px;
+        /* Efectos de los elementos caídos */
+        .falling-object {
+            position: absolute;
+            animation: fallEffect 5s infinite ease-in-out;
+            z-index: -1;
         }
+
+        @keyframes fallEffect {
+            0% {
+                top: -50px;
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                top: 100vh;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Animación de corazones, mariposas y estrellas */
+        .heart, .butterfly, .star {
+            font-size: 30px;
+            animation: fallEffect 4s infinite;
+        }
+
+        /* Color de las figuras */
+        .heart {
+            color: #ff4d88;
+        }
+        .butterfly {
+            color: #8e44ad;
+        }
+        .star {
+            color: #2ecc71;
+        }
+
     </style>
 </head>
 <body>
@@ -75,12 +122,22 @@
         <h1>Para ti, mi amor ❤️</h1>
         <p>El día de hoy quiero recordarte lo especial que eres para mí. Eres mi razón para sonreír, mi inspiración, mi todo. Te amo más de lo que las palabras pueden expresar, y este día solo quiero que sientas todo mi amor en cada nota de esta canción.</p>
 
-        <!-- Reproductor de música de la canción "Novatos - Humbe" -->
-       <div class="music-player">
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" 
-            src="https://w.soundcloud.com/player/?url=https://on.soundcloud.com/wH2Df7Cu7CWCcKCf9&color=%23ff6600&auto_play=true">
-    </iframe>
+        <!-- Reproductor de música de SoundCloud -->
+        <div class="music-player">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" 
+                    src=<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1963067427&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #1723cb;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/humbe-sc" title="HUMBE" target="_blank" style="color: #e328e7; text-decoration: none;">HUMBE</a> · <a href="https://soundcloud.com/humbe-sc/novatos" title="novatos" target="_blank" style="color: #76dd6f; text-decoration: none;">novatos</a></div>
+            </iframe>
+        </div>
     </div>
-    </div>
+
+    <!-- Efectos de corazones, mariposas y estrellas -->
+    <div class="falling-object heart" style="top: 10%; left: 10%;">❤️</div>
+    <div class="falling-object butterfly" style="top: 20%; left: 40%;">🦋</div>
+    <div class="falling-object star" style="top: 30%; left: 60%;">⭐</div>
+    <div class="falling-object heart" style="top: 40%; left: 80%;">❤️</div>
+    <div class="falling-object butterfly" style="top: 50%; left: 30%;">🦋</div>
+    <div class="falling-object star" style="top: 60%; left: 20%;">⭐</div>
+
+    <!-- Puedes agregar más elementos de animación si deseas -->
 </body>
 </html>
